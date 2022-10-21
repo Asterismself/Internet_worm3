@@ -120,26 +120,26 @@ if __name__ == '__main__':
     noticeType = int(input('请输入通知类型（0表示综合信息，1表示教务管理，2表示教学研究，3表示实践教学，4表示考试管理，5表示交流管理，6表示基地专业，7表示泰山学堂，8表示教师培训，9表示课程建设，10表示质量评估，11表示技术支持）： ')) + 1013
     start_page = int(input('请输入起始页码： '))
     end_page = int(input('请输入结束页码： '))
-    # year, month, day, hour, minute = map(int, input('请输入爬取时间（精确到分钟）：').split())
-    # second = 0
-    # # 定时任务
-    # # 设定一个标签，确保是完成定时任务以后，在修改时间
-    # # flag = 0
-    # # 设置启动时间
-    # sched_timer = datetime.datetime(year, month, day, hour, minute, second)
-    # while True:
-    #     now = datetime.datetime.now()
-    #     # datetime时间是毫秒级的，而我们自己设置的是秒级的，如果直接写sched_timer==now，成功率很低，所以给一个一秒误差
-    #     if sched_timer < now < sched_timer + datetime.timedelta(seconds=1):
-    #         time.sleep(1)
+    year, month, day, hour, minute = map(int, input('请输入爬取时间（精确到分钟）：').split())
+    second = 0
+    # 定时任务
+    # 设定一个标签，确保是完成定时任务以后，在修改时间
+    # flag = 0
+    # 设置启动时间
+    sched_timer = datetime.datetime(year, month, day, hour, minute, second)
+    while True:
+        now = datetime.datetime.now()
+        # datetime时间是毫秒级的，而我们自己设置的是秒级的，如果直接写sched_timer==now，成功率很低，所以给一个一秒误差
+        if sched_timer < now < sched_timer + datetime.timedelta(seconds=1):
+            time.sleep(1)
             # 获得想要的数据
             data_list = analysis_content(noticeType, start_page, end_page)
             # 下载
             down_load(data_list, noticeType)
-        #     break
-        #     # flag = 1
-        # else:
-        #     time.sleep(1)
+            break
+            # flag = 1
+        else:
+            time.sleep(1)
 
 
 
