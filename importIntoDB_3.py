@@ -17,52 +17,52 @@ DBCHARSET = 'utf8'
 
 noticeType = int(input('请输入通知类型（0表示综合信息，1表示教务管理，2表示教学研究，3表示实践教学，4表示考试管理，5表示交流管理，6表示基地专业，7表示泰山学堂，8表示教师培训，9表示课程建设，10表示质量评估，11表示技术支持）： '))
 if noticeType == 0:
-    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\综合信息.json', 'r', encoding='utf-8') as fp:
+    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\jsonInfo\\综合信息.json', 'r', encoding='utf-8') as fp:
         content = fp.read()
         # print('A')
     result = json.loads(content)
 elif noticeType == 1:
-    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\教务管理.json', 'r', encoding='utf-8') as fp:
+    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\jsonInfo\\教务管理.json', 'r', encoding='utf-8') as fp:
         content = fp.read()
     result = json.loads(content)
 elif noticeType == 2:
-    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\教学研究.json', 'r', encoding='utf-8') as fp:
+    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\jsonInfo\\教学研究.json', 'r', encoding='utf-8') as fp:
         content = fp.read()
     result = json.loads(content)
 elif noticeType == 3:
-    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\实践教学.json', 'r', encoding='utf-8') as fp:
+    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\jsonInfo\\实践教学.json', 'r', encoding='utf-8') as fp:
         content = fp.read()
     result = json.loads(content)
 elif noticeType == 4:
-    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\考试管理.json', 'r', encoding='utf-8') as fp:
+    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\jsonInfo\\考试管理.json', 'r', encoding='utf-8') as fp:
         content = fp.read()
     result = json.loads(content)
 elif noticeType == 5:
-    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\交流管理.json', 'r', encoding='utf-8') as fp:
+    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\jsonInfo\\交流管理.json', 'r', encoding='utf-8') as fp:
         content = fp.read()
     result = json.loads(content)
 elif noticeType == 6:
-    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\基地专业.json', 'r', encoding='utf-8') as fp:
+    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\jsonInfo\\基地专业.json', 'r', encoding='utf-8') as fp:
         content = fp.read()
     result = json.loads(content)
 elif noticeType == 7:
-    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\泰山学堂.json', 'r', encoding='utf-8') as fp:
+    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\jsonInfo\\泰山学堂.json', 'r', encoding='utf-8') as fp:
         content = fp.read()
     result = json.loads(content)
 elif noticeType == 8:
-    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\教师培训.json', 'r', encoding='utf-8') as fp:
+    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\jsonInfo\\教师培训.json', 'r', encoding='utf-8') as fp:
         content = fp.read()
     result = json.loads(content)
 elif noticeType == 9:
-    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\课程建设.json', 'r', encoding='utf-8') as fp:
+    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\jsonInfo\\课程建设.json', 'r', encoding='utf-8') as fp:
         content = fp.read()
     result = json.loads(content)
 elif noticeType == 10:
-    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\质量评估.json', 'r', encoding='utf-8') as fp:
+    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\jsonInfo\\质量评估.json', 'r', encoding='utf-8') as fp:
         content = fp.read()
     result = json.loads(content)
 elif noticeType == 11:
-    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\技术支持.json', 'r', encoding='utf-8') as fp:
+    with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\jsonInfo\\技术支持.json', 'r', encoding='utf-8') as fp:
         content = fp.read()
     result = json.loads(content)
 

@@ -66,57 +66,60 @@ def analysis_content(*para):
 def down_load(_data_list, _noticeType):
     _data_list = json.dumps(_data_list, ensure_ascii=False)
     if noticeType == 1013:
-        with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\' + '综合信息.json', 'w', encoding='utf-8') as fp:
+        with open('E:\\python_learning\\Internet_worm_learning\\reexamine\\WebNotices\\jsonInfo\\' + '综合信息.json', 'w', encoding='utf-8') as fp:
             fp.write(_data_list)
             fp.close()
     elif noticeType == 1014:
-        with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\' + '教务管理.json', 'w', encoding='utf-8') as fp:
+        with open('E:\\python_learning\\Internet_worm_learning\\reexamine\\WebNotices\\jsonInfo\\' + '教务管理.json', 'w', encoding='utf-8') as fp:
             fp.write(_data_list)
             fp.close()
     elif noticeType == 1015:
-        with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\' + '教学研究.json', 'w', encoding='utf-8') as fp:
+        with open('E:\\python_learning\\Internet_worm_learning\\reexamine\\WebNotices\\jsonInfo\\' + '教学研究.json', 'w', encoding='utf-8') as fp:
             fp.write(_data_list)
             fp.close()
     elif noticeType == 1016:
-        with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\' + '实践教学.json', 'w', encoding='utf-8') as fp:
+        with open('E:\\python_learning\\Internet_worm_learning\\reexamine\\WebNotices\\jsonInfo\\' + '实践教学.json', 'w', encoding='utf-8') as fp:
             fp.write(_data_list)
             fp.close()
     elif noticeType == 1017:
-        with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\' + '考试管理.json', 'w', encoding='utf-8') as fp:
+        with open('E:\\python_learning\\Internet_worm_learning\\reexamine\\WebNotices\\jsonInfo\\' + '考试管理.json', 'w', encoding='utf-8') as fp:
             fp.write(_data_list)
             fp.close()
     elif noticeType == 1018:
-        with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\' + '交流管理.json', 'w', encoding='utf-8') as fp:
+        with open('E:\\python_learning\\Internet_worm_learning\\reexamine\\WebNotices\\jsonInfo\\' + '交流管理.json', 'w', encoding='utf-8') as fp:
             fp.write(_data_list)
             fp.close()
     elif noticeType == 1019:
-        with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\' + '基地专业.json', 'w', encoding='utf-8') as fp:
+        with open('E:\\python_learning\\Internet_worm_learning\\reexamine\\WebNotices\\jsonInfo\\' + '基地专业.json', 'w', encoding='utf-8') as fp:
             fp.write(_data_list)
             fp.close()
     elif noticeType == 1020:
-        with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\' + '泰山学堂.json', 'w', encoding='utf-8') as fp:
+        with open('E:\\python_learning\\Internet_worm_learning\\reexamine\\WebNotices\\jsonInfo\\' + '泰山学堂.json', 'w', encoding='utf-8') as fp:
             fp.write(_data_list)
             fp.close()
     elif noticeType == 1021:
-        with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\' + '教师培训.json', 'w', encoding='utf-8') as fp:
+        with open('E:\\python_learning\\Internet_worm_learning\\reexamine\\WebNotices\\jsonInfo\\' + '教师培训.json', 'w', encoding='utf-8') as fp:
             fp.write(_data_list)
             fp.close()
     elif noticeType == 1022:
-        with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\' + '课程建设.json', 'w', encoding='utf-8') as fp:
+        with open('E:\\python_learning\\Internet_worm_learning\\reexamine\\WebNotices\\jsonInfo\\' + '课程建设.json', 'w', encoding='utf-8') as fp:
             fp.write(_data_list)
             fp.close()
     elif noticeType == 1023:
-        with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\' + '质量评估.json', 'w', encoding='utf-8') as fp:
+        with open('E:\\python_learning\\Internet_worm_learning\\reexamine\\WebNotices\\jsonInfo\\' + '质量评估.json', 'w', encoding='utf-8') as fp:
             fp.write(_data_list)
             fp.close()
     elif noticeType == 1024:
-        with open('E:\\python_learning\\Internet_worm_learning\\WebNotices\\' + '技术支持.json', 'w', encoding='utf-8') as fp:
+        with open('E:\\python_learning\\Internet_worm_learning\\reexamine\\WebNotices\\jsonInfo\\' + '技术支持.json', 'w', encoding='utf-8') as fp:
             fp.write(_data_list)
             fp.close()
     print('下载成功！')
 
 
 if __name__ == '__main__':
+    noticeType = int(input('请输入通知类型（0表示综合信息，1表示教务管理，2表示教学研究，3表示实践教学，4表示考试管理，5表示交流管理，6表示基地专业，7表示泰山学堂，8表示教师培训，9表示课程建设，10表示质量评估，11表示技术支持）： ')) + 1013
+    start_page = int(input('请输入起始页码： '))
+    end_page = int(input('请输入结束页码： '))
     year, month, day, hour, minute = map(int, input('请输入爬取时间（精确到分钟）：').split())
     second = 0
     # 定时任务
@@ -129,9 +132,6 @@ if __name__ == '__main__':
         # datetime时间是毫秒级的，而我们自己设置的是秒级的，如果直接写sched_timer==now，成功率很低，所以给一个一秒误差
         if sched_timer < now < sched_timer + datetime.timedelta(seconds=1):
             time.sleep(1)
-            noticeType = int(input('请输入通知类型（0表示综合信息，1表示教务管理，2表示教学研究，3表示实践教学，4表示考试管理，5表示交流管理，6表示基地专业，7表示泰山学堂，8表示教师培训，9表示课程建设，10表示质量评估，11表示技术支持）： ')) + 1013
-            start_page = int(input('请输入起始页码： '))
-            end_page = int(input('请输入结束页码： '))
             # 获得想要的数据
             data_list = analysis_content(noticeType, start_page, end_page)
             # 下载
